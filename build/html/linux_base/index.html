@@ -1,0 +1,350 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Linux基础知识 &mdash; devopsBook v1 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="关于这些文档" href="../about.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="查看帮助" href="contents.html" />
+    <link rel="prev" title="DevOps笔记" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> devopsBook
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Linux基础知识</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contents.html">查看帮助</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#id2">基础操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#id3">文本文件操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#vi">Vi基础操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#id7">用户管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#id8">权限管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#id10">磁盘操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#id14">内存操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#id15">网络设置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#id16">管道与重定向</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#shelll">Shelll脚本</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../linux_pro/index.html">Linux高级知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">关于</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">devopsBook</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Linux基础知识</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/linux_base/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="linux">
+<h1>Linux基础知识<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contents.html">查看帮助</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#whatis">whatis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#man">man</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#info">info</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contents.html#id2">基础操作</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#cd">切换目录：cd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#pwd">查看当前目录：pwd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#ls">查看目录下文件：ls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#mkdir">创建文件夹：mkdir</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#cp">复制文件：cp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#mv">移动文件：mv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#rm">删除文件：rm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#rename">重命名文件：rename</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#dd">转换文件：dd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#which-whereis-locate-find">查找文件：which/whereis/locate/find</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#echo">echo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#env">环境变量：env</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#at">一次性计划任务：at</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#crontab">长期计划任务：crontab</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contents.html#id3">文本文件操作</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#cat">查看短文本文件：cat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#more">查看长文本文件：more</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#n-head">查看文件前n行：head</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#n-tail">查看文件后n行：tail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#cut">通过分割列来提取字符：cut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#od">od</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#tr">tr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#diff">比较文件差异：diff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#touch">touch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#file">file</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contents.html#vi">Vi基础操作</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#id4">删除：dd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#yy">复制：yy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#p">粘贴：p</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#id5">搜索：/和？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#u">撤销：u</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#q-w">保存及退出：:q,:w</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#set-nu">显示行号：:set nu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#id6">跳转：</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#d">清空文件：:%d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#set-ff">显示格式：:set ff</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contents.html#id7">用户管理</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#useradd">创建用户：useradd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#passwd">修改密码：passwd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#userdel">删除用户：userdel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#usermod">修改用户：usermod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#groupadd">创建组：groupadd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#su">切换用户身份：su</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#root-sudo">临时使用root权限：sudo</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contents.html#id8">权限管理</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#uid">用户身份：UID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#gid">组身份：GID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#id9">文件权限：</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#suid">临时属主权限：SUID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#sgid">临时属组权限：SGID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#sbid">只可管理自己的数据不能删除他人文件：SBID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#chattr">设置隐藏权限：chattr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#lsattr">显示隐藏属性：lsattr</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contents.html#id10">磁盘操作</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#id11">常见目录定义：</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#id12">常见文件系统：</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#mount">挂载硬件设备：mount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#umount">取消挂载：umount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#df">查看挂载点信息：df</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#du">查看磁盘使用量：du</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#ln">文件链接：ln</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#id13">逻辑卷：</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#quota">用户磁盘空间限制：quota</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#vfs">虚拟文件系统：VFS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contents.html#id14">内存操作</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#free">查看内存占用：free</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#ps">查看进程：ps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#top">查看进程占用资源：top</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#nice">改变进程优先级：nice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#kill">结束进程：kill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#ulimit">ulimit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#w-who-whoami">查看登录用户信息：w/who/whoami</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#pgrep">显示进程号：pgrep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#bg">使程序后台执行：bg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#fg">使程序前台执行：fg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#jobs">查看后台进程：jobs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#ipcs">查看进程间通信状态：ipcs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contents.html#id15">网络设置</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#ifconfig">查看网卡状态：ifconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#netstat">查看端口状态：netstat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#route">查看路由设置：route</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#nslookup">域名解析：nslookup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#ping">测试网络状况：ping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#telnet">测试远程端口是否开放：telnet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#traceroute">路由跟踪：traceroute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#wget">下载文件：wget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#curl">curl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#tcpdump">监听网卡数据包：tcpdump</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contents.html#id16">管道与重定向</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#id17">管道命令符：|</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#id18">重定向：&gt;/&gt;&gt;/&lt;/&lt;&lt;</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#id19">通配符：</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contents.html#id20">特殊字符转义：</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contents.html#shelll">Shelll脚本</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="contents.html" class="btn btn-neutral float-right" title="查看帮助" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="DevOps笔记" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2021, maxiaoMax.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
