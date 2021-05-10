@@ -2,6 +2,13 @@
 
 ### 查看帮助：whatis/man/info
 
+常见参数：
+
+```
+-v ： 一般是指verbose
+-h ： 一般是human
+```
+
 ### 切换目录：cd
 
 ```
@@ -82,27 +89,38 @@ locate ：去/var/lib/mlocate/mlocage.db中查找文件，一般一天运行一�
 find dir -name "" ： 遍历文件，参数比较复杂
 ```
 
-### echo
+### 输出字符串：echo
+
+```
+echo -e ： 开启转义，默认不开启
+```
 
 ### 环境变量：env
 
 ```
-HOME ： 
-SHELL ： 
-PS1 ： 
-PATH ：
-EDITOR ：
+env ： 显示当前用户全部环境变量
 ```
 
 ### 一次性计划任务：at
 
 ```
-at 
+at ： 在指定时间执行任务
 atq ： 查看任务列表
 atrm ： 删除任务
+batch ： 与at类似，只有系统不繁忙时才执行。
 ```
 
 ### 长期计划任务：crontab
+
+crontab的格式为：分钟 小时 日期 月份 星期几 命令，星期天等于0或者7
+
+```
+* ： 代表所有允许的取值
+/n ： 代表一定时间间隔
+n-m ： 代表一定取值范围
+x,y,z ： 代表离散的取值
+% ： 代表换行，可以用\%转义
+```
 
 ## 文本文件操作
 
@@ -141,9 +159,28 @@ tail -f file ： 持续刷新显示文件末尾
 cut -d: -f1 -s file ： -d后为分隔符,-f后为提取第几列，-s不显示不含分隔符的行
 ```
 
-### od
+### 以不同格式输出：od
 
-### tr
+```
+od -b file ： 以8进制输出
+od -c file ： 以ascii码输出
+```
+
+### 转换或删除字符：tr
+
+```
+[:alnum:] ： 所有的字母和数字
+[:alpha:] ： 所有的字母
+[:blank:] ： 所有的水平空格
+[:space:] ： 所有的水平和垂直空格
+[:cntrl:] ： 所有的控制字符
+[:digit:] ： 所有的数字
+[:graph:] ： 所有可打印的字符，不包括空格
+[:lower:] ： 所有的小写字母
+[:upper:] ： 所有的大写字母
+[:punct:] ： 所有的标点
+[=CHAR=] ： 所有符合指定的字符
+```
 
 ### 比较文件差异：diff
 
@@ -152,9 +189,28 @@ diff -b -B source target ： -b忽略空格差异，-B忽略空行差异
 diff -q source target ： 仅显示是否有差异
 ```
 
-### touch
+### 查看文件的时间属性：stat
 
-### file
+```
+stat file ： 查看文件的inode内容
+atime ： 
+mtime ： 
+ctime ：
+```
+
+### 修改文件的时间属性：touch
+
+```
+touch file ： 将文件的atime,mtime,ctime修改为系统当前时间，文件不存在则创建
+touch -m/-c/-a file ： 单独修改一个时间
+```
+
+### 识别文件格式：file
+
+```
+file filename ： 识别文件格式
+file -f filename ： 从文件中读取文件列表
+```
 
 ## Vi基础操作
 
@@ -208,7 +264,7 @@ N ： 跳到搜索到的上一行
 :set nonu ： 不显示行号
 ```
 
-### 跳转：
+### 跳转：:n
 
 ```
 :n ：跳转到第n行
@@ -255,13 +311,35 @@ su - username ： 切换用户身份和环境变量
 
 ### 查看用户登录记录：last
 
+用户登录信息保存在/var/log/wtmp
+
+```
+last user ： 显示用户的登录记录
+```
+
 ### 查看用户登录失败记录：lastb
+
+用户登录失败信息保存在/var/log/btmp
 
 ### 查看用户历史命令：history
 
+命令历史储存在 ~/.bash_history
+
+```
+export HISTTIMEFORMAT='%F %T ' ： 设置环境变量后的命令才会有时间戳
+ctrl + R ： 可以搜索自己使用过的命令
+!n ： 执行第n条命令
+```
+
 ### 查看登录用户信息：w/who/whoami
 
-### id
+```
+w ： 查看登录用户信息
+whoami ： 
+who ： 
+```
+
+### 查看用户组信息：id
 
 ## 权限管理
 
@@ -394,7 +472,22 @@ ln -s ： 软链接（符号链接），原文件删除就失效，相当于快�
 
 ### 查看内存占用：free
 
+free命令读取的是/proc/meminfo，可以在/etc/sysctl.conf中调整swappiness来调整swap使用策略。
+
+```
+free -h -s 3 ： 每3秒查询一次内存使用情况，以易读方式显示
+free ： 正在未被使用的内存
+available ： free + cache + buffer
+```
+
 ### 查看进程：ps
+
+```
+ps -ef 
+ps aux
+```
+
+
 
 ### 查看进程占用资源：top
 
