@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-DevOps笔记
+devops实践
 ======================================
 
 .. toctree::
@@ -11,8 +11,4 @@ DevOps笔记
    :caption: Contents:
 
 
-   linux_base/index
-   linux_pro/index
-   aws/index
-   devops/index
-   about
+   contents
